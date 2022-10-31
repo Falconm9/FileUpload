@@ -1,7 +1,7 @@
 const Koa = require('koa');
 const Router = require('@koa/router');
 const cors = require('@koa/cors');
-const {addNewFile, cleanQueue} = require('./queue/file.queue')
+const {addNewFile, cleanQueue, getQueue} = require('./queue/file.queue')
 
 const app = new Koa();
 const router = new Router();
@@ -33,6 +33,14 @@ router.post('/sendFile',koaBody({ multipart: true, uploadDir: '/tmp' }), async c
       status: 'error',
       response: 'Server is working but file type is not allowed'
     };
+  }
+});
+
+router.get('/getFiles', async ctx => {
+  const currentQueue = await getQueue()
+  ctx.response.body = {
+    status: 'ok',
+    currentQueue: currentQueue,
   }
 });
 

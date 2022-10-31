@@ -4,10 +4,10 @@ function UploadButton({saveFile, loading}){
 	const [file, setFile] =  useState(null);
 	
   const handleSubmit = (event) => {
-			event.preventDefault();
-			let formData = new FormData();
-      formData.append('file', file);
-			saveFile(formData) //send file to endpoint
+		event.preventDefault();
+		let formData = new FormData();
+		formData.append('file', file);
+		saveFile(formData) //send file to endpoint
 	}
 
 	const onChangefile = (event) => {

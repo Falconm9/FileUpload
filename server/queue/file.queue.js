@@ -29,9 +29,16 @@ const addNewFile = async (file) => {
     
   return {
     message: "file added successfully",
-    type: 'success'
+    type: 'success',
+    file: file
   }
 };
+
+const getQueue = async () => {
+  const jobs = await fileQueue.getJobs();
+
+  return jobs
+}
 
 
 const cleanQueue = async () => {
@@ -41,5 +48,6 @@ const cleanQueue = async () => {
 
 module.exports = {
     addNewFile,
-    cleanQueue
+    cleanQueue,
+    getQueue
 }
