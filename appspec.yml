@@ -11,7 +11,3 @@ permissions:
     owner: ec2-user
     group: ec2-user
 
-hooks:
-  ApplicationStart:
-    - location: scripts/app_start.sh
-      timeout: 300
