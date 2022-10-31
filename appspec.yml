@@ -1,5 +1,5 @@
 version: 0.0
-os: ubuntu
+os: linux
 
 files:
   - source: /
@@ -15,4 +15,3 @@ hooks:
   ApplicationStart:
     - location: scripts/app_start.sh
       timeout: 300
-      runas: root
