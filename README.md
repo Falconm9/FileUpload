@@ -18,6 +18,17 @@ Bull works with Redis so we need to instal redis on our machine before run **npm
 
 if you prefer docker you could use the image here [Redis Image](https://hub.docker.com/_/redis);
 
-after run redis image you will need set a process.env called REDIS_URL. something like:
+**commands to install redis image on docker**
 
-**process.env.REDIS_URL =  'redis://user:pass@localhost:49153'**
+### `docker run --name some-redis -d redis create`
+command to download redis image
+
+### `docker container run --name redis-db -p 8080:6379`
+command to create container on default route needed to project
+
+### `docker start redis-db`
+command to run redis-db if is stopped.
+
+## AWS Route Deployed proyect
+
+## [Deployed route](http://ec2-3-95-9-151.compute-1.amazonaws.com:3000)
