@@ -3,8 +3,10 @@ const {fileProcess} = require("./file-queue-consumer");
 
 const fileQueue = new Bull(
   "files-queue",
-  process.env.REDIS_URL, //you need to have redis installed or use this docker image https://hub.docker.com/_/redis
   {
+    redis: {
+      port: 8080,
+    },
     limiter: {
       max: 1,
       duration: 1000
